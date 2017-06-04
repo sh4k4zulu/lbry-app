@@ -39,11 +39,13 @@ module.exports = {
         include: PATHS.app
       }
     ],
+    noParse: /node_modules\/localforage\/dist\/localforage.js/,
     loaders: [
       { test: /\.css$/, loader: "style!css" },
       {
         test: /\.jsx?$/,
         loader: 'babel',
+        exclude: /node_modules/,
         query: {
           cacheDirectory: true,
           presets:[ 'es2015', 'react', 'stage-2' ]
